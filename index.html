@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#101514" />
+  <meta name="description" content="NETFORGE — practical IP, DNS, network and internet speed tools." />
+  <title>NETFORGE — IP & Network Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="modern.css" />
+  <link rel="stylesheet" href="details.css" />
+  <link rel="stylesheet" href="colorful.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="NETFORGE home"><span class="brand-mark">N<span>F</span></span><span>NETFORGE<small>NETWORK WORKBENCH</small></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="primary-nav"><a href="#home" data-page="home" class="nav-link active"><i>⌂</i> Overview</a><a href="#tools" data-page="tools" class="nav-link"><i>⌘</i> All tools <b>60</b></a><a href="#scripts" data-page="scripts" class="nav-link"><i>⇩</i> Script library</a><a href="#speedtest" data-page="speedtest" class="nav-link"><i>◉</i> Internet speed test</a></nav>
+      <div class="side-label category-label">CATEGORIES</div>
+      <nav class="category-nav" id="category-nav"></nav>
+      <div class="sidebar-foot"><span class="status-dot"></span> Public services operational <small>NETFORGE · LOCAL-FIRST</small></div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><button class="mobile-menu" id="mobile-menu" aria-label="Open menu">☰</button><div class="breadcrumb">NETFORGE <span>/</span> <strong id="crumb">Overview</strong></div><div class="top-actions"><label class="global-search"><span>⌕</span><input id="global-search" type="search" placeholder="Search tools…" autocomplete="off"/><kbd>⌘ K</kbd></label><button class="icon-button" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">◐</button><span class="live-badge"><i></i> LIVE</span></div></header>
+      <div id="app" class="content"></div>
+      <footer><span>NETFORGE <span class="muted">· Independent network utilities</span></span><div><a href="#privacy">Privacy</a><a href="#about">About</a><a href="#docs">Documentation</a></div></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app2.js" defer></script>
+  <script src="enhancements.js" defer></script>
+  <script src="ping-ui.js" defer></script>
+  <script src="language.js" defer></script>
+</body>
+</html>
+
