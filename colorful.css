@@ -22,3 +22,45 @@ body:not(.light){--bg:#11151d;--panel:#191f2b;--panel2:#202838;--line:#30394a;--
 .nf-res-table th,.nf-res-table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
 .nf-res-table th{font:9px 'DM Mono',monospace;color:var(--muted);background:var(--panel2,rgba(255,255,255,.02))}
 .nf-res-table tr:last-child td{border-bottom:0}
+
+/* Clean structured PDF report print layout for all tools & Website Intelligence */
+@media print{
+  body.print-report .sidebar,body.print-report .topbar,body.print-report footer,
+  body.print-report .eyebrow,body.print-report .page-title,body.print-report .page-desc,
+  body.print-report .tool-layout>.tool-box:first-child,body.print-report .panel-head,
+  body.print-report .result-actions,body.print-report .tool-explainer,body.print-report .notice,
+  body.print-report .tool-box:has(#wi-url),body.print-report [data-wi-tab]{display:none!important}
+  body.print-report .main{margin:0!important}
+  body.print-report .content{padding:0!important;max-width:none!important}
+  body.print-report .tool-layout{display:block!important}
+  body.print-report .panel,body.print-report .result-box{border:0!important;background:#fff!important;padding:0!important;box-shadow:none!important}
+  body.print-report #result:before,body.print-report #wi-body:before{content:'NETFORGE · REPORT';display:block;font:bold 18pt Arial,sans-serif;color:#111;margin:0 0 14px}
+  body.print-report .nf-res-hero{border:0!important;border-bottom:1px solid #bbb!important;border-radius:0!important;background:#fff!important;padding:0 0 14px!important;margin:0 0 14px!important}
+  body.print-report .nf-res-main{font:600 18pt 'DM Mono',monospace!important;color:#1b6b3a!important}
+  body.print-report .nf-res-badge{border-color:#bbb!important;color:#111!important;background:#f3f5f8!important}
+  body.print-report .nf-res-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px 24px!important;border-bottom:1px solid #bbb!important;padding-bottom:14px!important;margin-bottom:14px!important}
+  body.print-report .nf-res-grid>div{border:0!important;background:#fff!important;padding:4px 0!important}
+  body.print-report .nf-res-grid>div span,body.print-report .nf-res-label,body.print-report .nf-res-subhead{color:#555!important}
+  body.print-report .nf-res-grid>div strong,body.print-report .nf-res-table td,body.print-report .nf-res-table th{color:#111!important}
+  body.print-report .nf-res-table-wrap{border-color:#bbb!important}
+  body.print-report .nf-res-table th{background:#f3f5f8!important}
+}
+
+/* Modern animations, sidebar toggle & mobile responsiveness */
+@keyframes nfFadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.content>*,.nf-res-hero,.nf-res-grid>div{animation:nfFadeUp .28s cubic-bezier(.2,.8,.2,1) both}
+.tool-card,.panel,.btn,.copy-btn{transition:transform .18s ease,border-color .18s ease,background-color .18s ease,box-shadow .18s ease}
+.tool-card:hover{transform:translateY(-2px)}
+.btn:hover{transform:translateY(-1px)}
+.sidebar{transition:transform .25s cubic-bezier(.4,0,.2,1),width .25s ease,opacity .2s ease}
+.mobile-menu{display:inline-flex!important;align-items:center;justify-content:center;cursor:pointer}
+body.sidebar-collapsed .sidebar{display:none!important}
+body.sidebar-collapsed .main{margin-left:0!important;width:100%!important}
+@media(max-width:900px){
+  .topbar{padding:10px 12px;gap:8px;flex-wrap:wrap}
+  .global-search{min-width:120px;flex:1}
+  .content{padding:14px}
+  .tool-layout{grid-template-columns:1fr!important}
+  .nf-res-grid{grid-template-columns:1fr!important}
+  .allin-facts{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
